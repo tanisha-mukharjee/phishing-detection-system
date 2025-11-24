@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Detection System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: #fff;
+        }
+
+        .container {
+            width: 420px;
+            padding: 30px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1 img {
+            width: 30px;
+        }
+
+        input {
+            width: 85%;
+            padding: 12px;
+            font-size: 15px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #ffcc00;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #f0b400;
+        }
+
+        .accuracy {
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>
+            <img src="https://img.icons8.com/ios-filled/50/lock.png" alt="">
+            Phishing Detection System
+        </h1>
+
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter website URL">
+            <br>
+            <button type="submit">Check Safety</button>
+        </form>
+
+        <p class="accuracy">📊 Model Accuracy: <b>78.7%</b></p>
+
+        <p><a href="/logs">📄 View Logs</a></p>
+    </div>
+
+</body>
+</html>

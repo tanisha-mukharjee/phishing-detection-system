@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Result</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: #fff;
+        }
+
+        .card {
+            width: 450px;
+            padding: 30px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1 img {
+            width: 35px;
+        }
+
+        .url-box {
+            font-size: 16px;
+            margin-bottom: 15px;
+            word-wrap: break-word;
+        }
+
+        .result-box {
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .safe {
+            background: rgba(0, 200, 0, 0.3);
+            border-left: 5px solid #00e600;
+            color: #e0ffe0;
+        }
+
+        .phishing {
+            background: rgba(255, 0, 0, 0.3);
+            border-left: 5px solid #ff4d4d;
+            color: #ffe0e0;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+
+        <h1>
+            <img src="https://img.icons8.com/emoji/48/magnifying-glass-tilted-left.png" alt="">
+            Detection Result
+        </h1>
+
+        <p class="url-box"><b>🔗 URL:</b> {{ url }}</p>
+
+        {% if "Phishing" in result %}
+        <div class="result-box phishing">
+            🚨 {{ result }}
+        </div>
+        {% else %}
+        <div class="result-box safe">
+            ✅ {{ result }}
+        </div>
+        {% endif %}
+
+        <a href="/">🔍 Check Another URL</a>
+    </div>
+</body>
+</html>
